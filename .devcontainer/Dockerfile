@@ -23,5 +23,5 @@ RUN apt-get update; \
 
   USER ${USERNAME}
 
-  CMD ["/bin/bash"]
+  CMD ["/bin/zsh", "-l"]
   
