@@ -1,0 +1,14 @@
+{
+  "image": "maven:3-eclipse-temurin-17",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "editorconfig.editorconfig",
+        "ms-azuretools.vscode-docker",
+        "pivotal.vscode-boot-dev-pack",
+        "visualstudioexptteam.vscodeintellicode",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  }
+}
