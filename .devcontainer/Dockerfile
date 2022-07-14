@@ -12,6 +12,8 @@ RUN apt-get update; \
   echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen; \
   locale-gen; \
   update-locale LANG=en_US.UTF-8; \
+  curl -L https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz | gzip -dc | tar -C /opt/java -xf - ; \
+  mv /opt/java/apache-maven-* /opt/java/maven; \
   groupadd --gid $USER_GID $USERNAME; \
   useradd -s /bin/zsh --uid $USER_UID --gid $USER_GID -m $USERNAME; \
   echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME; \
