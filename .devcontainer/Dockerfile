@@ -15,6 +15,9 @@ RUN apt-get update; \
   curl -L https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz | gzip -dc | tar -C /opt/java -xf - ; \
   mv /opt/java/apache-maven-* /opt/java/maven; \
   groupadd --gid $USER_GID $USERNAME; \
+  curl -L https://services.gradle.org/distributions/gradle-7.4.2-bin.zip > /tmp/gradle-bin.zip; \
+  unzip /tmp/gradle-bin.zip -d /opt/java; \
+  mv /opt/java/gradle-* /opt/java/gradle; \
   useradd -s /bin/zsh --uid $USER_UID --gid $USER_GID -m $USERNAME; \
   echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME; \
   chmod 440 /etc/sudoers.d/$USERNAME; \  apt-get autoremove -y; \
