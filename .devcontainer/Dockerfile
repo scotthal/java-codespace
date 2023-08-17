@@ -12,10 +12,10 @@ RUN apt-get update; \
   echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen; \
   locale-gen; \
   update-locale LANG=en_US.UTF-8; \
-  curl -L https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz | gzip -dc | tar -C /opt/java -xf - ; \
+  curl -L https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz | gzip -dc | tar -C /opt/java -xf - ; \
   mv /opt/java/apache-maven-* /opt/java/maven; \
   groupadd --gid $USER_GID $USERNAME; \
-  curl -L https://services.gradle.org/distributions/gradle-7.4.2-bin.zip > /tmp/gradle-bin.zip; \
+  curl -L https://services.gradle.org/distributions/gradle-8.3-bin.zip > /tmp/gradle-bin.zip; \
   unzip /tmp/gradle-bin.zip -d /opt/java; \
   mv /opt/java/gradle-* /opt/java/gradle; \
   useradd -s /bin/zsh --uid $USER_UID --gid $USER_GID -m $USERNAME; \
